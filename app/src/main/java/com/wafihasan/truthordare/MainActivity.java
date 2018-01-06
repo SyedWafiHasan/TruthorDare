@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText editText = findViewById(R.id.editText);
-        TextView result = findViewById(R.id.result);
+        editText = findViewById(R.id.editText);
+        result = findViewById(R.id.result);
         Button viewdb = findViewById(R.id.viewdb);
         Button add = findViewById(R.id.add);
         Button del = findViewById(R.id.delete);
