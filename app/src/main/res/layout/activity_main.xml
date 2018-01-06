@@ -41,7 +41,6 @@
         android:layout_toStartOf="@+id/space"
         android:background="@android:color/transparent"
         android:text="Add"
-        android:onClick="addName"
         android:textColor="@color/text" />
 
     <Space
@@ -59,7 +58,6 @@
         android:layout_toEndOf="@+id/add"
         android:background="@android:color/transparent"
         android:text="Delete"
-        android:onClick="deleteName"
         android:textColor="@color/text" />
 
     <Button
@@ -71,7 +69,6 @@
         android:layout_alignStart="@+id/editText"
         android:background="@android:color/transparent"
         android:text="@string/app_name"
-        android:onClick="playit"
         android:textColor="@color/text" />
 
     <Button

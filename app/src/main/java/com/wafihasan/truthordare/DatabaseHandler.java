@@ -21,8 +21,7 @@ public class DatabaseHandler extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase)
     {
-        String query = "create table" + tableName + "(" +
-                columnsName + "TEXT" + ");";
+        String query = "CREATE TABLE " + tableName + "(" + columnsName + " TEXT" + ");";
         sqLiteDatabase.execSQL(query);
     }
 
@@ -33,8 +32,9 @@ public class DatabaseHandler extends SQLiteOpenHelper
         onCreate(sqLiteDatabase);
     }
 
-    public void delete(SQLiteDatabase sqLiteDatabase)
+    public void delete()
     {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+tableName);
     }
 
