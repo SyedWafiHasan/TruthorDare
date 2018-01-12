@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity
 {
     EditText editText;
     TextView result;
-    Random r;
+    Random r = new Random();
 
     DatabaseHandler databaseHandler;
 
@@ -117,5 +117,6 @@ public class MainActivity extends AppCompatActivity
     {
         databaseHandler.delete();
         Toast.makeText(getApplicationContext(),"Table Deleted",Toast.LENGTH_SHORT).show();
+        result.setText("");
     }
 }
