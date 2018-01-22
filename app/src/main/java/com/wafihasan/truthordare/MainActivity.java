@@ -106,13 +106,18 @@ public class MainActivity extends AppCompatActivity
     public void printDatabase()
     {
         String db = databaseHandler.getTableAsString();
-        result.setText(db);
+        if(db.length() == 0)
+            result.setText("Database Empty");
+        else
+            result.setText(db);
         editText.setText("");
     }
 
     public void addName()
     {
         namesclass names = new namesclass(editText.getText().toString());
+        String t = ((editText.getText().toString()) + " added");
+        Toast.makeText(getApplicationContext(), t ,Toast.LENGTH_LONG).show();
         databaseHandler.addName(names);
         printDatabase();
     }
@@ -120,6 +125,8 @@ public class MainActivity extends AppCompatActivity
     public void deleteName()
     {
         String string = editText.getText().toString();
+        String t = ((editText.getText().toString()) + " deleted");
+        Toast.makeText(getApplicationContext(), t ,Toast.LENGTH_LONG).show();
         databaseHandler.deleteName(string);
         printDatabase();
     }
