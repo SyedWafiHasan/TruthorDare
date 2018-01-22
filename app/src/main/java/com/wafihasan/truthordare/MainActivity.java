@@ -86,10 +86,15 @@ public class MainActivity extends AppCompatActivity
     {
         int ran = r.nextInt(2);
         String name = databaseHandler.databaseToString();
-        if(ran == 1)
-            result.setText("Truth"+" : "+name);
-        else if(ran == 0)
-            result.setText("Dare"+" : "+name);
+        if (name.length() != 0)
+        {
+            if (ran == 1)
+                result.setText("Truth : " + name);
+            else if (ran == 0)
+                result.setText("Dare : " + name);
+        }
+        else
+            result.setText("Database Empty");
     }
 
     public void printDatabase()
@@ -116,7 +121,7 @@ public class MainActivity extends AppCompatActivity
     public void dropTable()
     {
         databaseHandler.delete();
-        Toast.makeText(getApplicationContext(),"Table Deleted",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Table Deleted",Toast.LENGTH_LONG).show();
         result.setText("");
     }
 }
