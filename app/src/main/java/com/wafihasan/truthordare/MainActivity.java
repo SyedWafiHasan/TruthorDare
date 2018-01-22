@@ -50,7 +50,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                playit();
+                if(result.getText().toString().length() != 0)
+                    playit();
+                else
+                    Toast.makeText(getApplicationContext(),"Database Empty",Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -59,7 +63,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                addName();
+                if (editText.getText().toString().length() != 0)
+                    addName();
+                else
+                    Toast.makeText(getApplicationContext(),"Enter a name!",Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -68,7 +76,10 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                deleteName();
+                if (editText.getText().toString().length() != 0)
+                    deleteName();
+                else
+                    Toast.makeText(getApplicationContext(),"Enter a name!",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -86,15 +97,10 @@ public class MainActivity extends AppCompatActivity
     {
         int ran = r.nextInt(2);
         String name = databaseHandler.databaseToString();
-        if (name.length() != 0)
-        {
-            if (ran == 1)
-                result.setText("Truth : " + name);
-            else if (ran == 0)
-                result.setText("Dare : " + name);
-        }
-        else
-            result.setText("Database Empty");
+        if (ran == 1)
+            result.setText("Truth : " + name);
+        else if (ran == 0)
+            result.setText("Dare : " + name);
     }
 
     public void printDatabase()

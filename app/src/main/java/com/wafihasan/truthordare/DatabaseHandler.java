@@ -81,6 +81,8 @@ public class DatabaseHandler extends SQLiteOpenHelper
         Cursor c = sqLiteDatabase.rawQuery(query, null);
         c.moveToFirst();
         dbString = c.getString(0);
+        if (dbString.length() == 0)
+            dbString = "Database Empty";
         sqLiteDatabase.close();
         return dbString;
     }
